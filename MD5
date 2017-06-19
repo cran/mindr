@@ -1,0 +1,10 @@
+006544e86c0243946a7e0529a0ca7910 *DESCRIPTION
+185053b3cfed528dd85996da3914fc18 *NAMESPACE
+5aa28f39e0e1dbbf95d3a8b874aae4af *R/foo.R
+27012943f9bee87328d306db51a12b22 *build/vignette.rds
+f9c258022ecfc250179305e160f624a3 *inst/doc/mindr.Rmd
+a12a440ae749fc1caa36cca305ccdb25 *inst/doc/mindr.html
+c20f86adbd1aab1ca79e5ba6a93dda50 *man/md2mm.Rd
+ff9d0420a1ad3882745511a7482a0049 *man/mm2md.Rd
+91e78b85008ac25eec70ffceef61733b *man/outline.Rd
+f9c258022ecfc250179305e160f624a3 *vignettes/mindr.Rmd
