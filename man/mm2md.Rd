@@ -4,7 +4,7 @@
 \alias{mm2md}
 \title{Convert a mind map (.mm) into markdown headers.}
 \usage{
-mm2md(folder = "mm", savefile = TRUE, savefilename = "mm.md", backup = TRUE)
+mm2md(folder = "mm", savefile = TRUE, savefilename = "mindr", backup = TRUE)
 }
 \arguments{
 \item{folder}{character. The folder which contains the input file(s).}
@@ -22,5 +22,6 @@ a vector of strings showing outline of a markdown document or book.
 Convert a mind map (.mm) into markdown headers.
 }
 \examples{
-mm2md()
+folder <- system.file("examples/mm", package = "mindr")
+mm2md(folder = folder)
 }

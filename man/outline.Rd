@@ -5,7 +5,7 @@
 \title{Extract headers of markdown or rmarkdown files as an outline.}
 \usage{
 outline(folder = "mm", remove_curly_bracket = FALSE, savefile = TRUE, 
-    savefilename = "outline.md", backup = TRUE)
+    savefilename = "outline", backup = TRUE)
 }
 \arguments{
 \item{folder}{character. The folder which contains the input file(s).}
@@ -25,5 +25,7 @@ a vector of strings showing outline of a markdown document or book.
 Extract headers of markdown or rmarkdown files as an outline.
 }
 \examples{
-outline()
+folder <- system.file("examples/md", package = "mindr")
+outline(folder = folder)
+outline(folder = folder, remove_curly_bracket = TRUE)
 }
