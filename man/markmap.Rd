@@ -4,10 +4,15 @@
 \alias{markmap}
 \title{Create a markmap widget}
 \usage{
-markmap(folder = "mm", remove_curly_bracket = FALSE, width = NULL, height = NULL, 
-    elementId = NULL, options = markmapOption())
+markmap(root = NA, input = c(".md", ".mm"), folder = NA, remove_curly_bracket = FALSE, 
+    width = NULL, height = NULL, elementId = NULL, options = markmapOption(), 
+    bookdown_style = TRUE)
 }
 \arguments{
+\item{root}{character. a string displayed as the root of the mind map}
+
+\item{input}{character, The format of theinput files}
+
 \item{folder}{character. The folder which contains the input file(s).}
 
 \item{remove_curly_bracket}{logical. Whether to remove {#ID} in the headers of the markdown file (usually in a 'bookdown' \url{https://github.com/rstudio/bookdown} project).}
@@ -19,6 +24,8 @@ markmap(folder = "mm", remove_curly_bracket = FALSE, width = NULL, height = NULL
 \item{elementId}{character.}
 
 \item{options}{the markmap options}
+
+\item{bookdown_style}{logical. whether the markdown files are in bookdown style, i.e. index.Rmd at the beginning, \code{# (PART)}, \code{# (APPENDIX)} and \code{# References} as an upper level of normal \code{#} title}
 }
 \value{
 A HTML widget object rendered from a given document.
