@@ -5,8 +5,8 @@
 \title{Convert markdown or rmarkdown files to mindmap files.}
 \usage{
 md2mm(pattern = "*.[R]*md$", title = NA, path = ".", remove_curly_bracket = FALSE, 
-    savefilename = NA, backup = TRUE, bookdown_style = TRUE, keep_eq = FALSE, 
-    method = c("regexpr", "pandoc"))
+    savefile = TRUE, savefilename = NA, backup = TRUE, bookdown_style = TRUE, 
+    keep_eq = FALSE, method = c("regexpr", "pandoc"))
 }
 \arguments{
 \item{pattern}{an optional regular expression for filtering the input files. See \code{help(dir)}.}
@@ -16,6 +16,8 @@ md2mm(pattern = "*.[R]*md$", title = NA, path = ".", remove_curly_bracket = FALS
 \item{path}{character. The path of the folder which contains the input file(s).}
 
 \item{remove_curly_bracket}{logical. Whether to remove {#ID} in the headers of the markdown file (usually in a 'bookdown' \url{https://github.com/rstudio/bookdown} project).}
+
+\item{savefile}{logical. Whether to save the output as a file.}
 
 \item{savefilename}{character. Valid when savefile == TRUE.}
 

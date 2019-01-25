@@ -4,7 +4,7 @@
 \alias{r2mm}
 \title{Convert .R scripts into a .mm file}
 \usage{
-r2mm(filepattern = "*.R$", path = ".", title = NA, savefilename = NA)
+r2mm(filepattern = "*.R$", path = ".", title = NA, savefile = TRUE, savefilename = NA)
 }
 \arguments{
 \item{filepattern}{the pattern of the script file names}
@@ -13,10 +13,12 @@ r2mm(filepattern = "*.R$", path = ".", title = NA, savefilename = NA)
 
 \item{title}{title of the mindmap}
 
+\item{savefile}{logical. Whether to save the output as a file.}
+
 \item{savefilename}{the destinated file name}
 }
 \value{
-an R markdown file
+an mindmap file
 }
 \description{
 Convert .R scripts into a .mm file
