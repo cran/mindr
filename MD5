@@ -1,7 +1,7 @@
-c7ab40e90605ffcd93aaf4d1c3095351 *DESCRIPTION
+fd77a13e9489351df1254527b7698154 *DESCRIPTION
 4a580d134f7dd2646b0edea6e4415426 *LICENSE
 ec3ef6c3785280b243f29725d6add36d *NAMESPACE
-d695c1c0372508168c7c3735c60073fb *R/internal.R
+3db324e020ac182a82b0c185e43a6f2c *R/internal.R
 42be812f8a43f3ea32829908e88a5954 *R/mindr.R
 6ca15afe4ae7bce32d01d1c91084c19d *inst/examples/md/bookdownplus1.md
 c694bf518d7664c877ba186c0ee80d5b *inst/examples/md/bookdownplus2.md
@@ -36,7 +36,7 @@ c6d23db7a02df67319bb81cba8030974 *inst/htmlwidgets/markmap.js
 f1cf31eb44e50461f53f423d1b839267 *man/dir4.Rd
 b824b9fbe844f7e80b9a7e542e977da5 *man/get_body.Rd
 4c28ea86d2cca7980690bfae32def552 *man/get_eqloc.Rd
-fbd15d3dda16587762780ad675cf1e93 *man/get_filename_ext.Rd
+e88d13428dd0f05cd30636367b0f8eea *man/get_filename_ext.Rd
 d59c5e798e4f1d0b9aaf9fbc97d0731a *man/get_foldername.Rd
 2b827a8d12a9eee9561d6e4d6c89afc3 *man/get_heading.Rd
 7b1a77c87941250958e3c3233e9959ea *man/get_heading2.Rd

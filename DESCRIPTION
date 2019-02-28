@@ -1,6 +1,6 @@
 Package: mindr
-Version: 1.2.0
-Date: 2019-01-25
+Version: 1.2.1
+Date: 2019-02-28
 Title: Convert Files Between Markdown or Rmarkdown Files and Mindmaps
 Author: Peng Zhao
 Maintainer: Peng Zhao <pzhao@pzhao.net>
@@ -13,6 +13,6 @@ URL: https://github.com/pzhaonet/mindr
 BugReports: https://github.com/pzhaonet/mindr/issues
 RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2019-01-25 11:04:10 UTC; PengZhao
+Packaged: 2019-02-28 10:32:46 UTC; PengZhao
 Repository: CRAN
-Date/Publication: 2019-01-25 13:40:03 UTC
+Date/Publication: 2019-02-28 13:10:03 UTC

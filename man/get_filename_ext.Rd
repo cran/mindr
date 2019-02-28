@@ -2,7 +2,7 @@
 % Please edit documentation in R/internal.R
 \name{get_filename_ext}
 \alias{get_filename_ext}
-\title{get the file name extention}
+\title{get the file name extension}
 \usage{
 get_filename_ext(filename)
 }
@@ -10,8 +10,8 @@ get_filename_ext(filename)
 \item{filename}{character, the file name}
 }
 \value{
-character, the file name extention
+character, the file name extension
 }
 \description{
-get the file name extention
+get the file name extension
 }
