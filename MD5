@@ -1,7 +1,7 @@
-fd77a13e9489351df1254527b7698154 *DESCRIPTION
+1e80bfb6f5a5ba5d4067e248b50a646d *DESCRIPTION
 4a580d134f7dd2646b0edea6e4415426 *LICENSE
 ec3ef6c3785280b243f29725d6add36d *NAMESPACE
-3db324e020ac182a82b0c185e43a6f2c *R/internal.R
+d8a526c189ca5d21178efdab461ba82b *R/internal.R
 42be812f8a43f3ea32829908e88a5954 *R/mindr.R
 6ca15afe4ae7bce32d01d1c91084c19d *inst/examples/md/bookdownplus1.md
 c694bf518d7664c877ba186c0ee80d5b *inst/examples/md/bookdownplus2.md
