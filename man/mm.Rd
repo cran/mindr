@@ -4,18 +4,29 @@
 \alias{mm}
 \title{Convert between .R, .Rmd, .mm according to the given file names, and create a markmap widget}
 \usage{
-mm(from = NULL, to = NULL, type = c("file", "text", "dir"), root = NA, 
-    show_files = TRUE, remove_curly_bracket = TRUE, bookdown_style = TRUE, 
-    widget_name = NA, width = NULL, height = NULL, elementId = NULL, 
-    options = markmapOption(preset = "colorful"), method = c("regexpr", 
-        "pandoc"))
+mm(
+  from = NULL,
+  to = NULL,
+  type = c("file", "text", "dir"),
+  root = NA,
+  show_files = TRUE,
+  remove_curly_bracket = TRUE,
+  bookdown_style = TRUE,
+  widget_name = NA,
+  width = NULL,
+  height = NULL,
+  elementId = NULL,
+  options = markmapOption(preset = "colorful"),
+  method = c("regexpr", "pandoc"),
+  include_list = FALSE
+)
 }
 \arguments{
 \item{from}{character. The path of the input file, or the input markdown text, or the path to the directory. Dependent on 'type'.}
 
 \item{to}{character. The path of the output file.}
 
-\item{type}{character. The type of the input. If type == 'dir' and the OS is LinUx, the 'tree' command must be pre-installed: \code{sudo apt-get install tree}.}
+\item{type}{character. The type of the input. If type == 'dir' and the OS is LinUx, the 'tree' command must be pre-installed: \verb{sudo apt-get install tree}.}
 
 \item{root}{character. a string displayed as the root of the mind map}
 
@@ -23,7 +34,7 @@ mm(from = NULL, to = NULL, type = c("file", "text", "dir"), root = NA,
 
 \item{remove_curly_bracket}{logical. Whether to remove {#ID} in the headers of the markdown file (usually in a 'bookdown' \url{https://github.com/rstudio/bookdown} project).}
 
-\item{bookdown_style}{logical. whether the markdown files are in bookdown style, i.e. index.Rmd at the beginning, \code{# (PART)}, \code{# (APPENDIX)} and \code{# References} as an upper level of normal \code{#} title}
+\item{bookdown_style}{logical. whether the markdown files are in bookdown style, i.e. index.Rmd at the beginning, \verb{# (PART)}, \verb{# (APPENDIX)} and \verb{# References} as an upper level of normal \verb{#} title}
 
 \item{widget_name}{The file name of the html widget to save.}
 
@@ -36,6 +47,8 @@ mm(from = NULL, to = NULL, type = c("file", "text", "dir"), root = NA,
 \item{options}{the markmap options}
 
 \item{method}{"regexpr" uses regular expressions, 'pandoc' uses pandoc to find the headings.}
+
+\item{include_list}{logical. whether to convert unnumbered lists into headings.}
 }
 \value{
 A HTML widget object rendered from a given document.
@@ -46,8 +59,8 @@ Convert between .R, .Rmd, .mm according to the given file names, and create a ma
 \details{
 For LinUx OS and mac OS, the 'tree' command must be pre-installed before using 'show_files = FALSE'.
 \itemize{
-\item Linux: \code{sudo apt-get install tree}
-\item mac: install \href{https://brew.sh/}{Homebrew} first. Then in the terminal: \code{brew install tree}.
+\item Linux: \verb{sudo apt-get install tree}
+\item mac: install \href{https://brew.sh/}{Homebrew} first. Then in the terminal: \verb{brew install tree}.
 }
 }
 \examples{
@@ -56,44 +69,30 @@ For LinUx OS and mac OS, the 'tree' command must be pre-installed before using '
 input <- c("# Chapter 1", "## Section 1.1", "## Section 1.2", "# Chapter 2")
 mm(from = input, type = "text", root = "mindr")
 
-### directory -> widget
-input <- paste0(.libPaths(), "/mindr")[1]
-mm(from = input, type = "dir")
-mm(from = input, type = "dir", widget_name = "mindrtest.html")
-### directory -> mm
-mm(from = input, type = "dir", to = "test.mm")
-### directory -> md
-mm(from = input, type = "dir", to = "test.md")
-### directory -> txt
-mm(from = input, type = "dir", to = "test.txt")
+### directory -> widget input <- paste0(.libPaths(), '/mindr')[1] mm(from = input,
+### type = 'dir') mm(from = input, type = 'dir', widget_name = 'mindrtest.html')
+### directory -> mm mm(from = input, type = 'dir', to = 'test.mm') directory -> md
+### mm(from = input, type = 'dir', to = 'test.md') directory -> txt mm(from =
+### input, type = 'dir', to = 'test.txt')
 
-### Rmd -> widget
-input <- system.file("examples/r/rmd2r.Rmd", package = "mindr")
-mm(from = input, type = "file", root = "mindr")
-### Rmd -> r
-mm(from = input, type = "file", root = "mindr", to = "test.r")
-### Rmd -> mm
-mm(from = input, type = "file", root = "mindr", to = "test.mm")
+### Rmd -> widget input <- system.file('examples/r/rmd2r.Rmd', package = 'mindr')
+### mm(from = input, type = 'file', root = 'mindr') Rmd -> r mm(from = input, type
+### = 'file', root = 'mindr', to = 'test.r') Rmd -> mm mm(from = input, type =
+### 'file', root = 'mindr', to = 'test.mm')
 
-### mm -> widget
-input <- system.file("examples/mm/bookdownplus.mm", package = "mindr")
-mm(from = input, type = "file", root = "mindr")
-### mm -> Rmd
-mm(from = input, type = "file", root = "mindr", to = "test.Rmd")
-### mm -> r
-mm(from = input, type = "file", root = "mindr", to = "test.r")
+### mm -> widget input <- system.file('examples/mm/bookdownplus.mm', package =
+### 'mindr') mm(from = input, type = 'file', root = 'mindr') mm -> Rmd mm(from =
+### input, type = 'file', root = 'mindr', to = 'test.Rmd') mm -> r mm(from = input,
+### type = 'file', root = 'mindr', to = 'test.r')
 
-### r -> widget
-input <- system.file("examples/r/r2rmd.R", package = "mindr")
-mm(from = input, type = "file", root = "mindr")
-### r -> Rmd
-mm(from = input, type = "file", root = "mindr", to = "test.Rmd")
-### r -> mm
-mm(from = input, type = "file", root = "mindr", to = "test.mm")
+### r -> widget input <- system.file('examples/r/r2rmd.R', package = 'mindr')
+### mm(from = input, type = 'file', root = 'mindr') r -> Rmd mm(from = input, type
+### = 'file', root = 'mindr', to = 'test.Rmd') r -> mm mm(from = input, type =
+### 'file', root = 'mindr', to = 'test.mm')
 
-### The outline of the book Learning R
-input <- system.file("examples/xuer/xuer.md", package = "mindr")
-mm(from = input, type = "file", root = "Learning R", to = "learningr.mm")
+### The outline of the book Learning R input <-
+### system.file('examples/xuer/xuer.md', package = 'mindr') mm(from = input, type =
+### 'file', root = 'Learning R', to = 'learningr.mm')
 }
 
 }

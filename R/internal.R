@@ -12,16 +12,16 @@ get_eqloc <- function(eq_begin, eq_end){
   return(eq)
 }
 
-#' Get the folder name of a given complete path
-#'
-#' @param path The complete path
-#'
-#' @return The folder name
-#'
-get_foldername <- function(path){
-  foldername <- strsplit(path, '[/\\]')[[1]]
-  return(foldername[length(foldername)])
-}
+#' #' Get the folder name of a given complete path
+#' #'
+#' #' @param path The complete path
+#' #'
+#' #' @return The folder name
+#' #'
+#' get_foldername <- function(path){
+#'   foldername <- strsplit(path, '[/\\]')[[1]]
+#'   return(foldername[length(foldername)])
+#' }
 
 #' get the file name extension
 #'
@@ -54,7 +54,7 @@ rename2 <- function(filename, connect = '-'){
   } else {
     filename2 <- c(paste(filename_sep[-nfilename], collapse = '.'), paste0('.', filename_sep[nfilename]))
   }
-  newname <- paste0(filename2[1], connect, format(Sys.time(), paste('%Y', '%m','%d', '%H', '%M', '%S', sep = connect)), filename2[2])
+  newname <- paste0(filename2[1], connect, 'new', filename2[2])
   return(newname)
 }
 
@@ -92,7 +92,38 @@ rmvcode <- function(index, loc) {
 #'
 #' @return integer. the index of the headings in the given strings.
 get_heading <- function(pattern = '^#+ ', text){
-  return(grep(pattern = pattern, x = text))
+  newtext <- grep(pattern = pattern, x = text)
+  return(newtext)
+}
+
+#' convert list to heading
+#'
+#' @importFrom stats na.omit
+#' @param text the given strings
+#'
+#' @return integer. the index of the headings in the given strings.
+list2heading <- function(text){
+    # convert list into headings
+    ## remove blank lines
+    text <- text[text != '']
+
+    ## get the heading level by counting # number
+    oldheadings <- gsub('^(#+) .+', '\\1', x = text)
+    oldheadings[!grepl('^(#+) .+', x = text)] <- NA
+    heading_level <- nchar(oldheadings)
+    heading_level <- na.omit(heading_level)[cumsum(!is.na(heading_level))]
+
+    list_loc <- grepl('^ *- .+', text)
+    oldlist <- gsub('^( *-) .+', '\\1', text)
+    oldlist_title <- gsub('^( *-) (.+)', '\\2', text)[list_loc]
+
+    oldlist[!list_loc] <- NA
+    list_level <- (nchar(oldlist) - 1)/2 + 1
+    list_level <- list_level + heading_level
+    list_level <- na.omit(list_level)
+    new_list_prefix <- sapply(list_level, function(x) paste(rep('#', x), collapse = ''))
+    text[list_loc] <- paste(new_list_prefix, oldlist_title)
+  return(text)
 }
 
 #' get the headings out of given strings
@@ -178,8 +209,7 @@ dir2 <- function(path = getwd(),
         message(paste0(savefilename, '.txt already exits.'))
         savefilename <-
           paste0(savefilename,
-                 '-',
-                 format(Sys.time(), '%Y-%m-%d-%H-%M-%S'))
+                 '-new')
       }
       writeLines(mytree, savefilename, useBytes = TRUE)
       message(paste(savefilename), ' was generated!')
@@ -234,7 +264,7 @@ dir2 <- function(path = getwd(),
   }
 }
 
-#' Convert a folder structure into a mindmap.
+#' Convert a folder structure into a mindmap (using the data.tree package for non-windows os).
 #'
 #' @param savefilename character. Valid when savefile == TRUE.
 #' @param backup logical. Whether the existing target file, if any, should be saved as backup.
@@ -290,8 +320,7 @@ dir4 <- function(path = getwd(),
         message(paste0(savefilename, '.txt already exits.'))
         savefilename <-
           paste0(savefilename,
-                 '-',
-                 format(Sys.time(), '%Y-%m-%d-%H-%M-%S'))
+                 '-new')
       }
       writeLines(mytree, savefilename, useBytes = TRUE)
       message(paste(savefilename), ' was generated!')

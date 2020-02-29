@@ -2,10 +2,16 @@
 % Please edit documentation in R/internal.R
 \name{dir4}
 \alias{dir4}
-\title{Convert a folder structure into a mindmap.}
+\title{Convert a folder structure into a mindmap (using the data.tree package for non-windows os).}
 \usage{
-dir4(path = getwd(), savefile = TRUE, savefilename = "mindr.mm", output = c("mm", 
-    "txt", "md", "Rmd"), backup = TRUE, dir_files = FALSE)
+dir4(
+  path = getwd(),
+  savefile = TRUE,
+  savefilename = "mindr.mm",
+  output = c("mm", "txt", "md", "Rmd"),
+  backup = TRUE,
+  dir_files = FALSE
+)
 }
 \arguments{
 \item{path}{character. the path of the folder.}
@@ -24,5 +30,5 @@ dir4(path = getwd(), savefile = TRUE, savefilename = "mindr.mm", output = c("mm"
 a mindmap file, which can be viewed by common mindmap software, such as 'FreeMind' (\url{http://freemind.sourceforge.net/wiki/index.php/Main_Page}) and 'XMind' (\url{http://www.xmind.net}).
 }
 \description{
-Convert a folder structure into a mindmap.
+Convert a folder structure into a mindmap (using the data.tree package for non-windows os).
 }

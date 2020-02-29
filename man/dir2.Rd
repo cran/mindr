@@ -4,8 +4,14 @@
 \alias{dir2}
 \title{Convert a folder structure into a mindmap by using the 'tree' command.}
 \usage{
-dir2(path = getwd(), savefile = TRUE, savefilename = "mindr.mm", output = c("mm", 
-    "txt", "md", "Rmd"), backup = TRUE, dir_files = FALSE)
+dir2(
+  path = getwd(),
+  savefile = TRUE,
+  savefilename = "mindr.mm",
+  output = c("mm", "txt", "md", "Rmd"),
+  backup = TRUE,
+  dir_files = FALSE
+)
 }
 \arguments{
 \item{path}{character. the path of the folder.}
@@ -29,7 +35,7 @@ Convert a folder structure into a mindmap by using the 'tree' command.
 \details{
 For LinUx OS and mac OS, the 'tree' command must be pre-installed.
 \itemize{
-\item Linux: \code{sudo apt-get install tree}
-\item mac: install \href{https://brew.sh/}{Homebrew} first. Then in the terminal: \code{brew install tree}.
+\item Linux: \verb{sudo apt-get install tree}
+\item mac: install \href{https://brew.sh/}{Homebrew} first. Then in the terminal: \verb{brew install tree}.
 }
 }
