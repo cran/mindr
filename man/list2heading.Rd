@@ -2,7 +2,7 @@
 % Please edit documentation in R/internal.R
 \name{list2heading}
 \alias{list2heading}
-\title{convert list to heading}
+\title{convert lists to headings in a text}
 \usage{
 list2heading(text)
 }
@@ -13,5 +13,5 @@ list2heading(text)
 integer. the index of the headings in the given strings.
 }
 \description{
-convert list to heading
+convert lists to headings in a text
 }

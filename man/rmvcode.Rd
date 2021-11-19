@@ -2,18 +2,18 @@
 % Please edit documentation in R/internal.R
 \name{rmvcode}
 \alias{rmvcode}
-\title{check whether a digital number is within a given range}
+\title{Check whether a digital number is within a given range}
 \usage{
 rmvcode(index, loc)
 }
 \arguments{
 \item{index}{integer. a row number in a markdown file}
 
-\item{loc}{integer vector. the row numbers of the code block indicator, e.g.  triple backticks}
+\item{loc}{integer vector. the row numbers of the code block indicator, e.g.  triple backsticks}
 }
 \value{
 logical.
 }
 \description{
-check whether a digital number is within a given range
+Check whether a digital number is within a given range
 }
