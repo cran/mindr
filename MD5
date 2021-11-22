@@ -1,8 +1,8 @@
-f0913606e11836cc929ed803cc577ca1 *DESCRIPTION
+1bc500eaec5f9a92184f3fe3011e916b *DESCRIPTION
 b06af124281c27643add5ead05118110 *NAMESPACE
-ac39400317e6ebfd2b150b7d51bf1b40 *R/individual.R
-d79a3076edfce853e88e2e5984b67a8f *R/internal.R
-74ea20ac85fda438e4da8b80b076ffe4 *R/wrapper.R
+69824a5d84fd0e5f057ec0bfce4a0b45 *R/individual.R
+626eca48e9265a9d82ec6ad9c8cfc937 *R/internal.R
+a65d65fc1116652366f219e09a519947 *R/wrapper.R
 1249923343b002b8334c18ac3ad9b247 *inst/examples/mindr-md.Rmd
 7bfca9502c5153bd80985695d1151f56 *inst/examples/mindr-mm.mm
 fe0fe323cebc51dcc3240178608bea65 *inst/examples/mindr-r.R
@@ -34,12 +34,12 @@ f518dfab2d0f0187d6f669e31479d893 *man/filterNULL.Rd
 acaf806be13a29f2c8b2dfe4dfc0d97b *man/guess_type.Rd
 8198f7da99ac366a9cfad6fccbf0571b *man/list2heading.Rd
 d6ae6294b320e42dc053f9e000a06144 *man/markmap.Rd
-e4972b0f17e4c7e15f07adf0a52971ee *man/markmapOption.Rd
+4963937dc1f2fc8ba6ad23684e708530 *man/markmapOption.Rd
 a2cd37cc0b821dd1ebd85f709e529858 *man/md2dir.Rd
 af9ddd4c19344f9e66641db98ca0844c *man/md2mm.Rd
 24f58d7c6a4c34339d07d6c67893abd8 *man/md2r.Rd
 2e1b11d5289c7a40eafc65b3015d65fe *man/mdtxt2mmtxt.Rd
-72d612de38c15964f1a94e88eb68578a *man/mm.Rd
+3c6a0856f2f886d878af9f9d25fd5f9a *man/mm.Rd
 4280888a93ae1dbb519f26e96620c3f3 *man/mm2dir.Rd
 8cad6f1d32ad700b17bec8585e341c43 *man/mm2md.Rd
 ccf3289cd41b0c3605f34919f5e576c3 *man/mm2r.Rd
